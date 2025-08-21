@@ -25,7 +25,7 @@ sudo cmake .
 sudo make
 sudo cp lib/*.a /usr/lib
 
-cd /workspaces/docker-robot-pipelines
+cd /workspaces/docker-robot-pipelines-axxxxxxx
 mkdir build
 cd build
 cmake ..
@@ -33,3 +33,7 @@ make
 
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu ctest --output-on-failure
 ```
+
+### Dica 
+
+Em cada step do pipeline das GitHub Actions corre num novo shell, ou seja, se existir troca de diretórios num step esse perde o efeito no outro step.
